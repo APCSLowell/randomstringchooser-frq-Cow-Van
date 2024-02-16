@@ -1,8 +1,18 @@
 import java.util.*;
 public class RandomStringChooser
 {
-  /* to be implemented in part (a) */
-  
-  //Heads up! 
-  //You will get a very confusing error message until you have working code in part b as well
+  private final ArrayList<String> words = new ArrayList<>();
+
+  public RandomStringChooser(String[] sa) {
+    for (String s : sa) {
+      words.add(s);
+    }
+  }
+
+  public String getNext() {
+    if (words.size() == 0) {
+      return "NONE";
+    }
+    return words.remove((int) (Math.random() * words.size()));
+  }
 }
